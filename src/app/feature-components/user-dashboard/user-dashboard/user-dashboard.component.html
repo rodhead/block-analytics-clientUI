@@ -1,0 +1,18 @@
+
+<div class="container-fluid">
+    <div class="row" >
+        
+        <div class="col-sm-2 p-2 " style="height: 100%;">
+            <p-panelMenu [model]="items" ></p-panelMenu>
+        </div>
+        <div class="col-sm-10">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="circle-div">
+        <button pButton pRipple type="button" icon="pi pi-comments" class="p-button-rounded" (click)="display = true"></button>
+    </div>
+</div>
+<p-sidebar [(visible)]="display" position="right" [blockScroll]="false" [baseZIndex]="10000">
+            Content
+ </p-sidebar>
