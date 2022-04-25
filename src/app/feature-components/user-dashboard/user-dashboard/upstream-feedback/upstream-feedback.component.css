@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(29, 54, 54);
+}
+
+p-dropdown {
+    min-width: 80%;
+}
+.ui-dropdown{
+    width: 100%;
+}

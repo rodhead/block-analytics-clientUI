@@ -29,6 +29,13 @@ import { FieldsetModule, } from 'primeng/fieldset';
 import {TooltipModule} from 'primeng/tooltip';
 import { DividerModule } from "primeng/divider";
 import {ConfirmPopupModule} from 'primeng/confirmpopup';
+import {FileUploadModule} from 'primeng/fileupload';
+import {TabViewModule} from 'primeng/tabview';
+import {RatingModule} from 'primeng/rating';
+import {SliderModule} from 'primeng/slider';
+import { TagModule } from 'primeng/tag';
+import {TableModule} from 'primeng/table';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 @NgModule({
   exports: [
@@ -61,7 +68,14 @@ import {ConfirmPopupModule} from 'primeng/confirmpopup';
     FieldsetModule,
     TooltipModule,
     DividerModule,
-    ConfirmPopupModule
+    ConfirmPopupModule,
+    FileUploadModule,
+    TabViewModule,
+    RatingModule,
+    SliderModule,
+    TagModule,
+    TableModule,
+    ConfirmDialogModule
   ]
 })
 export class NgPrimeModule{}

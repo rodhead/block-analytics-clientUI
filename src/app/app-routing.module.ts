@@ -7,6 +7,7 @@ import { HomeComponent } from './feature-components/home/home.component';
 import { CyFeedbackDataComponent } from './feature-components/user-dashboard/user-dashboard/cy-feedback-data/cy-feedback-data.component';
 import { Level1MetricsComponent } from './feature-components/user-dashboard/user-dashboard/level1-metrics/level1-metrics.component';
 import { SentimentAnalysisComponent } from './feature-components/user-dashboard/user-dashboard/sentiment-analysis/sentiment-analysis.component';
+import { UpstreamFeedbackComponent } from './feature-components/user-dashboard/user-dashboard/upstream-feedback/upstream-feedback.component';
 import { UserDashboardComponent } from './feature-components/user-dashboard/user-dashboard/user-dashboard.component';
 import { UserFeedbackHistoryComponent } from './feature-components/user-dashboard/user-dashboard/user-feedback-history/user-feedback-history.component';
 import { UserSeetingsComponent } from './feature-components/user-dashboard/user-dashboard/user-seetings/user-seetings.component';
@@ -44,6 +45,10 @@ const routes: Routes = [
       {
         path: 'cy-feedback',
         component: CyFeedbackDataComponent
+      },
+      {
+        path: 'upstream-feedback',
+        component: UpstreamFeedbackComponent
       }
     ]
   },

@@ -65,8 +65,9 @@ export class UserDashboardComponent implements OnInit {
 
                 },
                 {
-                    label: 'Data View Settings',
+                    label: 'Upload Reviews',
                     icon:'pi pi-fw pi-box',
+                    routerLink: 'upstream-feedback'
                 }
             ]
             },

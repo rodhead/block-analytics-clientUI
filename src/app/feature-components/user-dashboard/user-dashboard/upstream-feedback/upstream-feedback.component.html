@@ -1,0 +1,79 @@
+<div class="row mt-2">
+    <div class="col-sm-12">
+        <p-fileUpload name="file" [customUpload]="true"  (onUpload)="onUpload($event)" (uploadHandler)="myUploader($event)" 
+                accept=".xlsx,.csv">
+                <!-- <ng-template pTemplate="content">
+                    <ul *ngIf="uploadedFiles.length">
+                        <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                    </ul>
+                </ng-template> -->
+        </p-fileUpload>
+    </div>
+</div>
+<p-toast></p-toast>
+
+<div class="row">
+        <div class="col p-2" *ngFor="let data of reviewHeader">
+            <!-- <p-tag severity="danger" value="{{data}}" ></p-tag> -->
+            <!-- <p-chip class="p-chip-success"  label="{{data.name}}" removeIcon="pi pi-plus" (onRemove)="addToList($event)" [removable]="true"></p-chip> -->
+            <p-chip class="p-chip-success"  label="{{data.name}}" removeIcon="pi pi-plus" (onRemove)="addToList($event)" [removable]="false"></p-chip>
+        </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-sm-12">
+        <!-- <p-table [value]="responseData" [scrollable]="true" scrollHeight="500px" [resizableColumns]="true" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+            <ng-template pTemplate="caption">
+                Review Column Mapping
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Columns From File ()</th>
+                    <th>Columns from System</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-respData>
+                <tr>
+                    <td>{{respData}}</td>
+                    <td><p-dropdown  id="saxs" [options]="reviewHeader"
+                         optionLabel="name"
+                         [showClear]="true"
+                         [baseZIndex]=2 appendTo="body"
+                         [style]="{'width':'100%'}"
+
+                         ></p-dropdown ></td>
+                         
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <button pButton pRipple type="button" label="Submit" class="p-button-success" disabled=true></button>
+            </ng-template>
+        </p-table> -->
+       
+         
+        <table datatable [dtOptions]="dtOptions" inputId="mappingTable"  class="table row-border hover border" style="width: 100%;">
+            <thead>
+              <tr>
+                <th>Columns From System</th>
+                <th>Columns From File ({{fileName}})</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let person of responseData; let i = index">
+                <td class="text-dark text-font-bold">{{ person }}</td>
+                <td ><p-dropdown id="val{{i}}"  [options]="reviewHeader"
+                    optionLabel="name"
+                    [showClear]="true"
+                    [baseZIndex]=2 appendTo="body"
+                    [style]="{'width':'100%'}"
+        
+                    ></p-dropdown ></td>
+               
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>

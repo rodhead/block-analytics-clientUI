@@ -11,6 +11,11 @@ import { DataTablesModule } from "angular-datatables";
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { UpstreamFeedbackComponent } from './user-dashboard/upstream-feedback/upstream-feedback.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {RatingModule} from 'primeng/rating';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -21,14 +26,18 @@ import { ConfirmationService, MessageService } from 'primeng/api';
     UserSeetingsComponent,
     Level1MetricsComponent,
     SentimentAnalysisComponent,
-    CyFeedbackDataComponent
+    CyFeedbackDataComponent,
+    UpstreamFeedbackComponent
   ],
   imports: [
     CommonModule,
     NgPrimeModule,
     DataTablesModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    RatingModule,
+    FormsModule
   ],
   providers: [ConfirmationService, MessageService]
 
