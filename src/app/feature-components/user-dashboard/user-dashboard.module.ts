@@ -15,7 +15,7 @@ import { UpstreamFeedbackComponent } from './user-dashboard/upstream-feedback/up
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import {RatingModule} from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
-
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 
@@ -37,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     HttpClientModule,
     RatingModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [ConfirmationService, MessageService]
 

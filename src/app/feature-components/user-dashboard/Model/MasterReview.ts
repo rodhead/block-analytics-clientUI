@@ -10,4 +10,8 @@ export class MasterReview {
     reviewRating:any;
     reviewUrl:any;
     status:any;
+    productId:any;
+    text:any;
+    summary:any;
+    score:any;
   }

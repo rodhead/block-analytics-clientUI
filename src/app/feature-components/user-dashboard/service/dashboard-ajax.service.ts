@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DashboardAjaxService {
+  
 
   constructor(
     private http: HttpClient
@@ -17,5 +18,9 @@ export class DashboardAjaxService {
 
     getPermittedColumn():Observable<any>{
       return this.http.get("http://localhost:9393/upstream/startupData/a102")
+    }
+
+    getViewModelObject():Observable<any> {
+      return this.http.get("http://localhost:9393/view/feedback")
     }
 }

@@ -1,30 +1,29 @@
-<div class="conatainer-fluid mt-4">
+<div class="conatainer-fluid mt-4" style="margin-bottom: 50px;">
   <div class="row">
-    <div class="col-sm-10 bg-light">
+    <div class="col-sm-12 bg-light">
       <div class="row">
         <div class="col-sm-12">
-          <p-fieldset legend="Filter" [toggleable]="true" [transitionOptions]="'300ms'" >
-           <div class="row">
-             <div class="col-sm-12">
-               
-             </div>
-           </div>
-        </p-fieldset>
+          <!-- <ng-select [multiple]="true" [(ngModel)]="selectedProductType">
+            <ng-option *ngFor="let car of productType" [value]="car" [disabled]="false">{{car}}</ng-option>
+            <ng-option [value]="'custom'">Custom</ng-option>
+        </ng-select> -->
+          
         </div>
       </div>
       <div class="row mt-4">
         <div class="col-sm-12">
-          <table datatable [dtOptions]="dtOptions" class="table stripe" style="width: 100%;">
+          <table datatable [dtOptions]="dtOptions" class="table stripe" style="width: 100%;" id="feedbackTable">
             <thead>
             </thead>
             <tbody *ngIf="masterReview?.length != 0">
               <tr *ngFor="let person of masterReview">
-                <td>{{ person.reviewId }}</td>
-                <td>{{ person.reviewDateCreated }}</td>
-                <td>{{ person.entityId }}</td>
-                <td class="font-weight-bold text-dark">{{ person.review }}</td>
-                <td>  <p-rating [(ngModel)]="person.reviewRating"  [stars]=person.ratingMaxValue [readonly]=true [cancel]="false"></p-rating></td>
-                <td><a href={{person.reviewUrl}}><button pButton pRipple type="button" icon="pi pi-bookmark" class="p-button-rounded p-button-success p-button-text"></button></a></td>
+                <!-- <td>{{ person.id }}</td> -->
+                <td>{{ person.summary }}</td>
+                <td>{{ person.text }}</td>
+                
+                <td>  <p-rating [(ngModel)]="person.score"  [stars]="5" [readonly]=true [cancel]="false"></p-rating></td>
+                <td class="font-weight-bold text-dark">{{ person.productId }}</td>
+                <!-- <td><a href={{person.reviewUrl}}><button pButton pRipple type="button" icon="pi pi-bookmark" class="p-button-rounded p-button-success p-button-text"></button></a></td> -->
                 <td>
                   
                 </td>
@@ -39,7 +38,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-2">
+    <!-- <div class="col-sm-2">
       <div class="card shadow" style=" border-radius: 15px;">
         <div class="card-body">
           <h5 class="card-title">Notifications</h5>
@@ -47,9 +46,9 @@
           <p-rating ></p-rating>
           
           <h5>Basic</h5> 
-          <p-rating [(ngModel)]="val1" ></p-rating>
+        
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
